@@ -13,4 +13,7 @@ func LoadAPIRouter(r *gin.Engine) {
 	v1 := r.Group("/api/v1")
 	v1.POST("book", controller.CreateBookHandler)
 	v1.GET("book", controller.GetBookListHandler)
+	v1.GET("book/:id", controller.GetBookDetailHandler)
+	v1.PUT("book", controller.UpdateBookHandler)
+	v1.DELETE("book/:id", controller.DeleteBookHandler)
 }
